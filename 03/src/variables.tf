@@ -1,8 +1,8 @@
 ###cloud vars
-variable "token" {
+/*variable "token" {
   type        = string
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
-}
+}*/
 
 variable "cloud_id" {
   type        = string
@@ -29,4 +29,10 @@ variable "vpc_name" {
   type        = string
   default     = "develop"
   description = "VPC network&subnet name"
+}
+
+# Путь к JSON-ключу сервисного аккаунта для провайдера
+variable "service_account_key_file" {
+  type        = string
+  description = "Path to service account key JSON (e.g. key.json)"
 }
