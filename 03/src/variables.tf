@@ -36,3 +36,16 @@ variable "service_account_key_file" {
   type        = string
   description = "Path to service account key JSON (e.g. key.json)"
 }
+
+variable "each_vm" {
+  type = list(object({
+    vm_name     = string
+    cpu         = number
+    ram         = number
+    disk_volume = number
+  }))
+  default = [
+    { vm_name = "main",   cpu = 2, ram = 2, disk_volume = 10 },
+    { vm_name = "replica", cpu = 4, ram = 4, disk_volume = 15 }
+  ]
+}
